@@ -67,9 +67,9 @@ class Director:
             ((self.last_card.value < self.next_card.value) and (self.guess == "h")))
 
         if self.correct:
-            points += 100
+            self.points += 100
         else:
-            points -= 75
+            self.points -= 75
 
     def do_outputs(self):
         """Displays the card and any change in points. Also asks the player if they want to play again. 
@@ -81,8 +81,10 @@ class Director:
             return
 
         print(f"Next card was: {self.next_card.value}")
-        print(f"Unlucky! It's a draw.")
+        if self.last_card.value == self.next_card.value:
+            print(f"Unlucky! It's a draw.")
         print(f"Your score is: {self.points}\n")
         self.is_playing == (self.points > 0)
 
-        self.is_playing = (input("Play again? [y/n] ") == "y")
+        if self.is_playing:
+            self.is_playing = (input("Play again? [y/n] ") == "y")
