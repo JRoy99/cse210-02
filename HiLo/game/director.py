@@ -49,7 +49,7 @@ class Director:
         self.last_card.draw()
         print(f"The card is: {self.last_card.value}")
         self.guess = input("Higher or lower? [h/l] ")
-        while self.guess != "h" or "l":
+        while (self.guess != "h" and self.guess != "l"):
             self.guess = input("Invalid input. Please select higher or lower [h/l] ")
         
        
