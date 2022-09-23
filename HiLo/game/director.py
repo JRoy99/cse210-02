@@ -84,7 +84,7 @@ class Director:
         if self.last_card.value == self.next_card.value:
             print(f"Unlucky! It's a draw.")
         print(f"Your score is: {self.points}\n")
-        self.is_playing == (self.points > 0)
+        self.is_playing = (self.points > 0)
 
         if self.is_playing:
             self.is_playing = (input("Play again? [y/n] ") == "y")
